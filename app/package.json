@@ -4,6 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@blueprintjs/core": "^3.28.2",
+    "autoprefixer": "^9.8.2",
+    "postcss-modules": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
