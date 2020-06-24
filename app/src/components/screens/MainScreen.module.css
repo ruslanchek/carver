@@ -1,4 +1,4 @@
-.Root {
-  background-color: red;
-  padding: 40px;
+.Card {
+  flex-grow: 1;
+  max-width: 360px;
 }
