@@ -1,6 +1,6 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
-import styles from "./SimpleLayout.module.css";
+import styles from './SimpleLayout.module.css';
 
 interface IProps {}
 
