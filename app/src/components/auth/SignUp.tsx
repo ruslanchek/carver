@@ -1,6 +1,8 @@
-import React, { FC, Fragment } from 'react';
+import React, { FC } from 'react';
 import { useAuth } from '../../hooks/useAuth';
-import { message, Button, Input, Form } from 'antd';
+import { message, Button, Input, Form, Card } from 'antd';
+import { Link } from '@reach/router';
+import { PATHS } from '../../common/paths';
 
 interface IModel {
   email: string;
@@ -18,7 +20,7 @@ export const SignUp: FC = () => {
   };
 
   return (
-    <Fragment>
+    <Card title='Sign up' extra={<Link to={PATHS.SIGN_IN}>Sign in</Link>} style={{ width: 300 }}>
       <Form onFinish={onSubmit} name='basic'>
         <Form.Item name='email' rules={[{ required: true, message: 'Please input your email' }]}>
           <Input size='large' type='email' autoComplete='email' placeholder='Email' />
@@ -32,6 +34,6 @@ export const SignUp: FC = () => {
           Sign up
         </Button>
       </Form>
-    </Fragment>
+    </Card>
   );
 };
