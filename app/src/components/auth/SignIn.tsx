@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
-import { useAuth } from '../../hooks/useAuth';
+import React, { FC, useState, useContext } from 'react';
 import { message, Button, Input, Form, Card } from 'antd';
 import { Link } from '@reach/router';
 import { PATHS } from '../../common/paths';
+import { AuthProviderContext } from '../providers/AuthProvider';
 
 interface IModel {
   email: string;
@@ -10,13 +10,16 @@ interface IModel {
 }
 
 export const SignIn: FC = () => {
-  const { signIn } = useAuth();
+  const { signIn } = useContext(AuthProviderContext);
+  const [loading, setLoading] = useState(false);
   const onSubmit = async (data: IModel) => {
+    setLoading(true);
     try {
       await signIn(data.email, data.password);
     } catch (error) {
       message.error(error.message);
     }
+    setLoading(false);
   };
 
   return (
@@ -30,10 +33,10 @@ export const SignIn: FC = () => {
           <Input size='large' type='password' autoComplete='current-password' placeholder='Password' />
         </Form.Item>
 
-        <Button type='primary' size='large' htmlType='submit'>
+        <Button block disabled={loading} loading={loading} type='primary' size='large' htmlType='submit'>
           Sign in
         </Button>
-      </Form>{' '}
+      </Form>
     </Card>
   );
 };

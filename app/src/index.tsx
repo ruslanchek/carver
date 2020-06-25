@@ -3,8 +3,7 @@ import { render } from 'react-dom';
 import { MainScreen } from './components/screens/MainScreen';
 import { initFirebaseApp } from './common/firebase';
 import { AuthProvider } from './components/providers/AuthProvider';
-import { GlobalLoading } from './components/common/GlobalLoading';
-import { Router } from '@reach/router';
+import { Router, LocationProvider, createHistory } from '@reach/router';
 import './index.css';
 import { PATHS } from './common/paths';
 import { NotFoundScreen } from './components/screens/NotFoundScreen';
@@ -17,16 +16,18 @@ if (module.hot) {
 }
 
 const app = document.getElementById('app');
-render(
-  <AuthProvider>
-    <Router>
-      <NotFoundScreen default />
-      <AuthScreen mode='signIn' path={PATHS.SIGN_IN} />
-      <AuthScreen mode='signUp' path={PATHS.SIGN_UP} />
-      <MainScreen path={PATHS.MAIN} />
-    </Router>
+const history = createHistory(window as any);
 
-    <GlobalLoading />
-  </AuthProvider>,
+render(
+  <LocationProvider history={history}>
+    <AuthProvider>
+      <Router>
+        <NotFoundScreen default />
+        <AuthScreen mode='signIn' path={PATHS.SIGN_IN} />
+        <AuthScreen mode='signUp' path={PATHS.SIGN_UP} />
+        <MainScreen path={PATHS.MAIN} />
+      </Router>
+    </AuthProvider>
+  </LocationProvider>,
   app,
 );
