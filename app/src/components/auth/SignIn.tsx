@@ -33,7 +33,7 @@ export const SignIn: FC = () => {
           <Input size='large' type='password' autoComplete='current-password' placeholder='Password' />
         </Form.Item>
 
-        <Button block disabled={loading} loading={loading} type='primary' size='large' htmlType='submit'>
+        <Button block loading={loading} type='primary' size='large' htmlType='submit'>
           Sign in
         </Button>
       </Form>

@@ -1,12 +1,19 @@
-import React, { FC } from 'react';
-import { Card } from 'antd';
+import React, { FC, useContext } from 'react';
 import { SimpleLayout } from '../common/SimpleLayout';
-import { SignIn } from '../auth/SignIn';
-import { SignUp } from '../auth/SignUp';
 import { RouteComponentProps } from '@reach/router';
+import { AuthProviderContext } from '../providers/AuthProvider';
 
 interface IProps extends RouteComponentProps {}
 
 export const MainScreen: FC<IProps> = () => {
-  return <SimpleLayout>Main</SimpleLayout>;
+  const { signOut } = useContext(AuthProviderContext);
+
+  return (
+    <SimpleLayout>
+      Main
+      <a href='#' onClick={signOut}>
+        Sign Out
+      </a>
+    </SimpleLayout>
+  );
 };

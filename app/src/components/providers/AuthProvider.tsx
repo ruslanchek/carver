@@ -109,8 +109,6 @@ export const AuthProvider: FC = ({ children }) => {
     });
   }, []);
 
-  console.log(appLoading);
-
   return (
     <AuthProviderContext.Provider
       value={{
