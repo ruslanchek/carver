@@ -2,9 +2,8 @@ import React, { FC, useState, createContext, useEffect } from 'react';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import { GlobalLoading } from '../common/GlobalLoading';
-import { navigate, useLocation } from '@reach/router';
+import { useLocation, useNavigate } from '@reach/router';
 import { PATHS, PUBLIC_PATHS } from '../../common/paths';
-import { useAsyncEffect } from '../../hooks/useAsyncEffect';
 
 export type TUser = Pick<
   firebase.User,
@@ -29,6 +28,7 @@ export const AuthProviderContext = createContext<AuthProviderContext>({
 
 export const AuthProvider: FC = ({ children }) => {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
   const [user, setUser] = useState<TUser | undefined>();
   const [appLoading, setAppLoading] = useState<boolean>(true);
 
@@ -83,10 +83,10 @@ export const AuthProvider: FC = ({ children }) => {
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged(async data => {
-      let user = undefined;
+      let userData = undefined;
       if (data) {
         const { displayName, email, emailVerified, phoneNumber, photoURL, isAnonymous, uid, providerData } = data;
-        user = {
+        userData = {
           displayName,
           email,
           emailVerified,
@@ -98,32 +98,18 @@ export const AuthProvider: FC = ({ children }) => {
         };
       }
 
+      if (userData && PUBLIC_PATHS.includes(pathname)) {
+        await redirectSuccessAuth();
+      } else if (!userData && !PUBLIC_PATHS.includes(pathname)) {
+        await redirectUnauthorized();
+      }
+
       setAppLoading(false);
-      setUser(user);
+      setUser(userData);
     });
   }, []);
 
-  useAsyncEffect(async () => {
-    if (user) {
-      console.log('c1');
-
-      if (PUBLIC_PATHS.includes(pathname)) {
-        console.log('c1a');
-        await redirectSuccessAuth();
-      } else {
-        console.log('c2b');
-      }
-    } else {
-      console.log('c2');
-
-      if (!PUBLIC_PATHS.includes(pathname)) {
-        console.log('c2a');
-        await redirectUnauthorized();
-      } else {
-        console.log('c2b');
-      }
-    }
-  }, [pathname, appLoading, user]);
+  console.log(appLoading);
 
   return (
     <AuthProviderContext.Provider
