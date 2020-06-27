@@ -69,3 +69,5 @@ public/*
 .history
 .cache/
 dist/
+
+.DS_Store

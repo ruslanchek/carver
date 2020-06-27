@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react';
+import React, { FC } from 'react';
 import styles from './GlobalLoading.module.css';
 import { Spin } from 'antd';
 

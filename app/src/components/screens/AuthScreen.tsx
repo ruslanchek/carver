@@ -3,6 +3,8 @@ import { SimpleLayout } from '../common/SimpleLayout';
 import { SignIn } from '../auth/SignIn';
 import { SignUp } from '../auth/SignUp';
 import { RouteComponentProps } from '@reach/router';
+import { Logo } from '../common/Logo';
+import styles from './AuthScreen.module.css';
 
 interface IProps extends RouteComponentProps {
   mode: 'signIn' | 'signUp';
@@ -11,8 +13,13 @@ interface IProps extends RouteComponentProps {
 export const AuthScreen: FC<IProps> = ({ mode }) => {
   return (
     <SimpleLayout>
-      {mode === 'signIn' && <SignIn />}
-      {mode === 'signUp' && <SignUp />}
+      <div>
+        <div className={styles.Logo}>
+          <Logo size={130} />
+        </div>
+        {mode === 'signIn' && <SignIn />}
+        {mode === 'signUp' && <SignUp />}
+      </div>
     </SimpleLayout>
   );
 };
