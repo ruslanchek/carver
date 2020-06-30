@@ -1,19 +1,14 @@
 import React, { FC, useContext } from 'react';
 import { RouteComponentProps } from '@reach/router';
-import { AuthProviderContext } from '../providers/AuthProvider';
 import { MainLayout } from '../common/MainLayout';
+import { Typography } from 'antd';
 
 interface IProps extends RouteComponentProps {}
 
-export const MainScreen: FC<IProps> = () => {
-  const { signOut } = useContext(AuthProviderContext);
-
+export const EducatorsScreen: FC<IProps> = () => {
   return (
     <MainLayout>
-      Main
-      <a href='#' onClick={signOut}>
-        Sign Out
-      </a>
+      <Typography.Title level={1}>Educators</Typography.Title>
     </MainLayout>
   );
 };

@@ -8,6 +8,7 @@ import './index.css';
 import { PATHS } from './common/paths';
 import { NotFoundScreen } from './components/screens/NotFoundScreen';
 import { AuthScreen } from './components/screens/AuthScreen';
+import { EducatorsScreen } from './components/screens/EducatorsScreen';
 
 initFirebaseApp();
 
@@ -26,6 +27,7 @@ render(
         <AuthScreen mode='signIn' path={PATHS.SIGN_IN} />
         <AuthScreen mode='signUp' path={PATHS.SIGN_UP} />
         <MainScreen path={PATHS.MAIN} />
+        <EducatorsScreen path={PATHS.EDUCATORS} />
       </Router>
     </AuthProvider>
   </LocationProvider>,
