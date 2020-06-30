@@ -1,3 +1,6 @@
 .Root {
-  height: 100vh;
+}
+
+.Main {
+  padding: 0 60px 60px;
 }

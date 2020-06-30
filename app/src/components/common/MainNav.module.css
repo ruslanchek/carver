@@ -7,13 +7,14 @@
 .Nav {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   position: fixed;
-  top: 30px;
-  left: 30px;
+  top: 36px;
+  left: 36px;
   width: 300px;
   border-radius: 5px;
   padding: 20px 0;
   z-index: 10;
   background-color: #fff;
+  font-size: 18px;
 }
 
 .Link {
@@ -31,10 +32,15 @@
 .Button {
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 30px;
   color: #000;
   padding: 0 8px;
   margin: 0 0 0 -8px;
+  cursor: pointer;
+}
+
+.Button svg {
+  background-color: red;
 }
 
 .Link:hover {
@@ -42,7 +48,7 @@
 }
 
 .NavButton {
-  padding: 6px 28px 8px;
+  padding: 8px 28px 8px;
 }
 
 .Logo {

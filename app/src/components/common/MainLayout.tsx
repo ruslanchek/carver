@@ -9,7 +9,7 @@ export const MainLayout: FC<IProps> = ({ children }) => {
   return (
     <div className={styles.Root}>
       <MainNav title={<span>Educators</span>} />
-      {children}
+      <main className={styles.Main}>{children}</main>
     </div>
   );
 };

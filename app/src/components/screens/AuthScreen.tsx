@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { SimpleLayout } from '../common/SimpleLayout';
-import { SignIn } from '../auth/SignIn';
-import { SignUp } from '../auth/SignUp';
+import { SignIn } from '../modules/auth/SignIn';
+import { SignUp } from '../modules/auth/SignUp';
 import { RouteComponentProps } from '@reach/router';
 import { Logo } from '../common/Logo';
 import styles from './AuthScreen.module.css';
