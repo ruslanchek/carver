@@ -2,12 +2,14 @@ import React, { FC, useState, Fragment, ReactNode, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Link } from '@reach/router';
 import { PATHS } from '../../common/paths';
-import { MenuOutlined, ArrowLeftOutlined, HomeTwoTone } from '@ant-design/icons';
 import styles from './MainNav.module.css';
 import { useTransition, animated } from 'react-spring';
 import { Logo } from './Logo';
 import { Typography } from 'antd';
 import { useOnClickOutside } from '../../hooks/useOnClickOutside';
+import { IconMenu } from '../ui/icons/IconMenu';
+import { IconArrowThinLeftCircle } from '../ui/icons/IconArrowThinLeftCircle';
+import { ActiveLink } from './ActiveLink';
 
 interface IProps {
   title: ReactNode;
@@ -37,7 +39,9 @@ export const MainNav: FC<IProps> = ({ title }) => {
 
   return (
     <div className={styles.Root}>
-      <button className={styles.Button} onClick={toggle}></button>
+      <button className={styles.Button} onClick={toggle}>
+        <IconMenu />
+      </button>
       {transitions.map(({ item, key, props }) =>
         item ? (
           <Fragment key={key}>
@@ -45,33 +49,33 @@ export const MainNav: FC<IProps> = ({ title }) => {
               <animated.div style={props} className={styles.Nav} ref={profileMenuRef}>
                 <div className={styles.NavButton}>
                   <button className={styles.Button} onClick={toggle}>
-                    <ArrowLeftOutlined />
+                    <IconArrowThinLeftCircle />
                   </button>
                 </div>
-                <Link className={styles.Link} to={PATHS.EDUCATORS}>
+                <ActiveLink className={styles.Link} activeClassName='active' to={PATHS.HOME}>
                   Home
-                </Link>
-                <Link className={styles.Link} to={PATHS.EDUCATORS}>
+                </ActiveLink>
+                <ActiveLink className={styles.Link} activeClassName='active' to={PATHS.SCHEDULE}>
                   Schedule
-                </Link>
-                <Link className={styles.Link} to={PATHS.EDUCATORS}>
+                </ActiveLink>
+                <ActiveLink className={styles.Link} activeClassName='active' to={PATHS.PROGRESS}>
                   Progress
-                </Link>
-                <Link className={styles.Link} to={PATHS.EDUCATORS}>
+                </ActiveLink>
+                <ActiveLink className={styles.Link} activeClassName='active' to={PATHS.STUDENTS}>
                   Students
-                </Link>
-                <Link className={styles.Link} to={PATHS.EDUCATORS}>
+                </ActiveLink>
+                <ActiveLink className={styles.Link} activeClassName='active' to={PATHS.EDUCATORS}>
                   Educators
-                </Link>
-                <Link className={styles.Link} to={PATHS.EDUCATORS}>
+                </ActiveLink>
+                <ActiveLink className={styles.Link} activeClassName='active' to={PATHS.COURSES}>
                   Courses
-                </Link>
-                <Link className={styles.Link} to={PATHS.EDUCATORS}>
+                </ActiveLink>
+                <ActiveLink className={styles.Link} activeClassName='active' to={PATHS.EXERCISES}>
                   Exercises
-                </Link>
-                <Link className={styles.Link} to={PATHS.EDUCATORS}>
+                </ActiveLink>
+                <ActiveLink className={styles.Link} activeClassName='active' to={PATHS.SETTINGS}>
                   Settings
-                </Link>
+                </ActiveLink>
               </animated.div>,
               container,
             )}

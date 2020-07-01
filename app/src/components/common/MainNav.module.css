@@ -5,7 +5,7 @@
 }
 
 .Nav {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 36px;
   left: 36px;
@@ -17,44 +17,59 @@
   font-size: 18px;
 }
 
-.Link {
-  display: block;
-  padding: 10px 30px;
-  color: #000;
-  transition: all 0.1s;
-}
-
-.Link:hover {
-  background-color: #f5f5f5;
-  color: #000;
-}
-
-.Button {
-  background: none;
-  border: none;
-  font-size: 30px;
-  color: #000;
-  padding: 0 8px;
-  margin: 0 0 0 -8px;
-  cursor: pointer;
-}
-
-.Button svg {
-  background-color: red;
-}
-
-.Link:hover {
-  color: #000;
-}
-
-.NavButton {
-  padding: 8px 28px 8px;
-}
-
 .Logo {
   margin: 0 30px 0 22px;
 }
 
 .Title {
   margin-bottom: 0 !important;
+}
+
+.Button {
+  background: none;
+  border: none;
+  font-size: 34px;
+  color: var(--color-black);
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.Button :global(.secondary) {
+  fill: var(--color-black);
+}
+
+.Button :global(.primary) {
+  fill: #e4eaee;
+}
+
+.Button:hover :global(.primary) {
+  fill: #c5d0d6;
+}
+
+.NavButton {
+  padding: 6px 30px 8px 24px;
+}
+
+.Link {
+  display: block;
+  padding: 10px 30px;
+  color: var(--color-black);
+  transition: all 0.1s;
+}
+
+.Link :global(.active) {
+  background-color: #d7e0e6;
+}
+
+.Link:hover {
+  background-color: #e4eaee;
+}
+
+.Link:hover {
+  color: #000;
 }

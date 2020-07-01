@@ -33,8 +33,8 @@ export const AuthProvider: FC = ({ children }) => {
   const [appLoading, setAppLoading] = useState<boolean>(true);
 
   const redirectSuccessAuth = async () => {
-    if (pathname !== PATHS.MAIN) {
-      await navigate(PATHS.MAIN);
+    if (pathname !== PATHS.HOME) {
+      await navigate(PATHS.HOME);
     }
   };
 

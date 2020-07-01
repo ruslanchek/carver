@@ -1,5 +1,11 @@
 @import '../node_modules/antd/dist/antd.css';
 
+:root {
+  --color-black: #0d2b3e;
+  --color-red: red;
+}
+
 body {
   background-color: #fff;
+  color: var(--color-black);
 }

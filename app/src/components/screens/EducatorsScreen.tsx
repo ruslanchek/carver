@@ -1,7 +1,8 @@
-import React, { FC, useContext } from 'react';
+import React, { FC } from 'react';
 import { RouteComponentProps } from '@reach/router';
 import { MainLayout } from '../common/MainLayout';
 import { Typography } from 'antd';
+import { IconMenu } from '../ui/icons/IconMenu';
 
 interface IProps extends RouteComponentProps {}
 

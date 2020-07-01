@@ -26,7 +26,7 @@ render(
         <NotFoundScreen default />
         <AuthScreen mode='signIn' path={PATHS.SIGN_IN} />
         <AuthScreen mode='signUp' path={PATHS.SIGN_UP} />
-        <MainScreen path={PATHS.MAIN} />
+        <MainScreen path={PATHS.HOME} />
         <EducatorsScreen path={PATHS.EDUCATORS} />
       </Router>
     </AuthProvider>
