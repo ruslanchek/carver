@@ -13,7 +13,7 @@
   border-radius: 5px;
   padding: 20px 0;
   z-index: 10;
-  background-color: #fff;
+  background-color: var(--color-white);
   font-size: 18px;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .Title {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
 
 .Button {
@@ -44,32 +44,34 @@
 }
 
 .Button :global(.primary) {
-  fill: #e4eaee;
+  fill: var(--color-gray-1);
 }
 
 .Button:hover :global(.primary) {
-  fill: #c5d0d6;
+  fill: var(--color-gray-2);
 }
 
 .NavButton {
-  padding: 6px 30px 8px 24px;
+  padding: 6px 30px 24px 24px;
 }
 
 .Link {
   display: block;
   padding: 10px 30px;
-  color: var(--color-black);
   transition: all 0.1s;
 }
 
-.Link :global(.active) {
-  background-color: #d7e0e6;
+.Link:link,
+.Link:visited,
+.Link:active,
+.Link:hover {
+  color: var(--color-black);
 }
 
 .Link:hover {
-  background-color: #e4eaee;
+  background-color: var(--color-gray-1);
 }
 
-.Link:hover {
-  color: #000;
+.Link:global(.active) {
+  background-color: var(--color-gray-2);
 }

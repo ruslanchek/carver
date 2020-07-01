@@ -1,14 +1,14 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { MainScreen } from './components/screens/MainScreen';
+import { MainScreen } from './components/modules/main/MainScreen';
 import { initFirebaseApp } from './common/firebase';
-import { AuthProvider } from './components/providers/AuthProvider';
+import { AuthProvider } from './components/modules/auth/AuthProvider';
 import { Router, LocationProvider, createHistory } from '@reach/router';
 import './index.css';
 import { PATHS } from './common/paths';
-import { NotFoundScreen } from './components/screens/NotFoundScreen';
-import { AuthScreen } from './components/screens/AuthScreen';
-import { EducatorsScreen } from './components/screens/EducatorsScreen';
+import { NotFoundScreen } from './components/modules/main/NotFoundScreen';
+import { AuthScreen } from './components/modules/auth/AuthScreen';
+import { EducatorsScreen } from './components/modules/educators/EducatorsScreen';
 
 initFirebaseApp();
 

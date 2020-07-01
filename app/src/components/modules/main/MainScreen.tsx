@@ -1,7 +1,7 @@
 import React, { FC, useContext } from 'react';
 import { RouteComponentProps } from '@reach/router';
-import { AuthProviderContext } from '../providers/AuthProvider';
-import { MainLayout } from '../common/MainLayout';
+import { AuthProviderContext } from '../auth/AuthProvider';
+import { MainLayout } from '../../common/MainLayout';
 
 interface IProps extends RouteComponentProps {}
 

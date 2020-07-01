@@ -2,7 +2,7 @@ import React, { FC, useContext, useState } from 'react';
 import { message, Button, Input, Form, Card } from 'antd';
 import { Link } from '@reach/router';
 import { PATHS } from '../../../common/paths';
-import { AuthProviderContext } from '../../providers/AuthProvider';
+import { AuthProviderContext } from './AuthProvider';
 
 interface IModel {
   email: string;

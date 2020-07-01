@@ -1,9 +1,9 @@
 import React, { FC, useState, createContext, useEffect } from 'react';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
-import { GlobalLoading } from '../common/GlobalLoading';
+import { GlobalLoading } from '../../common/GlobalLoading';
 import { useLocation, useNavigate } from '@reach/router';
-import { PATHS, PUBLIC_PATHS } from '../../common/paths';
+import { PATHS, PUBLIC_PATHS } from '../../../common/paths';
 
 export type TUser = Pick<
   firebase.User,

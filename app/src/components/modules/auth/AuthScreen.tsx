@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import { SimpleLayout } from '../common/SimpleLayout';
-import { SignIn } from '../modules/auth/SignIn';
-import { SignUp } from '../modules/auth/SignUp';
+import { SimpleLayout } from '../../common/SimpleLayout';
+import { SignIn } from './SignIn';
+import { SignUp } from './SignUp';
 import { RouteComponentProps } from '@reach/router';
-import { Logo } from '../common/Logo';
+import { Logo } from '../../common/Logo';
 import styles from './AuthScreen.module.css';
 
 interface IProps extends RouteComponentProps {
