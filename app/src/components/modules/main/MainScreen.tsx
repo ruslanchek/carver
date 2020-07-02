@@ -1,7 +1,7 @@
 import React, { FC, useContext } from 'react';
 import { RouteComponentProps } from '@reach/router';
-import { AuthProviderContext } from '../auth/AuthProvider';
 import { MainLayout } from '../../common/MainLayout';
+import { AuthProviderContext } from '../auth/AuthProvider';
 
 interface IProps extends RouteComponentProps {}
 
@@ -9,8 +9,7 @@ export const MainScreen: FC<IProps> = () => {
   const { signOut } = useContext(AuthProviderContext);
 
   return (
-    <MainLayout>
-      Main
+    <MainLayout title='Home'>
       <a href='#' onClick={signOut}>
         Sign Out
       </a>

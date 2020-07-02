@@ -6,6 +6,7 @@
   --color-gray-1: #f4f6f8;
   --color-gray-2: #e4eaee;
   --color-gray-3: #d6dfe4;
+  --color-gray-4: #8b9da7;
 
   --border-radius-xs: 2px;
   --border-radius-sm: 4px;
@@ -14,6 +15,7 @@
 
   --box-shadow-md: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
+
 body {
   background-color: #fff;
   color: var(--color-black);

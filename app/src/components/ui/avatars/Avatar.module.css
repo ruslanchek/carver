@@ -1,6 +1,10 @@
 .Root {
   border-radius: 100%;
   background-image: linear-gradient(to top, var(--color-gray-2), var(--color-gray-1));
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-weight: 500;
 }
 
 .RootThinGray {
@@ -17,36 +21,54 @@
   object-fit: cover;
 }
 
+@keyframes ready {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .ImageReady {
-  opacity: 0.2;
+  animation: ready 0.4s;
+  animation-fill-mode: backwards;
 }
 
 .Root:global(.xl),
 .Image:global(.xl) {
   width: 86px;
   height: 86px;
+  font-size: 30px;
 }
 
 .Root:global(.lg),
 .Image:global(.lg) {
-  width: 86px;
-  height: 86px;
+  width: 64px;
+  height: 64px;
+  font-size: 24px;
 }
 
 .Root:global(.md),
 .Image:global(.md) {
-  width: 86px;
-  height: 86px;
+  width: 48px;
+  height: 48px;
+  font-size: 20px;
 }
 
 .Root:global(.sm),
 .Image:global(.sm) {
-  width: 86px;
-  height: 86px;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
 }
 
 .Root:global(.xs),
 .Image:global(.xs) {
-  width: 86px;
-  height: 86px;
+  width: 24px;
+  height: 24px;
+  font-size: 10px;
 }
