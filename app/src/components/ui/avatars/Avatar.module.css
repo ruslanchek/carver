@@ -1,0 +1,52 @@
+.Root {
+  border-radius: 100%;
+  background-image: linear-gradient(to top, var(--color-gray-2), var(--color-gray-1));
+}
+
+.RootThinGray {
+  box-shadow: 0 0 0 1px var(--color-gray-3);
+}
+
+.RootThickGray {
+  box-shadow: 0 0 0 1px var(--color-gray-3);
+}
+
+.Image {
+  border-radius: 100%;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.ImageReady {
+  opacity: 0.2;
+}
+
+.Root:global(.xl),
+.Image:global(.xl) {
+  width: 86px;
+  height: 86px;
+}
+
+.Root:global(.lg),
+.Image:global(.lg) {
+  width: 86px;
+  height: 86px;
+}
+
+.Root:global(.md),
+.Image:global(.md) {
+  width: 86px;
+  height: 86px;
+}
+
+.Root:global(.sm),
+.Image:global(.sm) {
+  width: 86px;
+  height: 86px;
+}
+
+.Root:global(.xs),
+.Image:global(.xs) {
+  width: 86px;
+  height: 86px;
+}

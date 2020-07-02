@@ -3,10 +3,17 @@
 :root {
   --color-white: #fff;
   --color-black: #0d2b3e;
-  --color-gray-1: #e4eaee;
-  --color-gray-2: #d6dfe4;
-}
+  --color-gray-1: #f4f6f8;
+  --color-gray-2: #e4eaee;
+  --color-gray-3: #d6dfe4;
 
+  --border-radius-xs: 2px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 6px;
+  --border-radius-xl: 10px;
+
+  --box-shadow-md: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
 body {
   background-color: #fff;
   color: var(--color-black);
@@ -14,12 +21,4 @@ body {
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-feature-settings: 'tnum';
   font-variant: tabular-nums;
-}
-
-h1 {
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  font-weight: 600;
-  font-size: 38px;
-  line-height: 1.23;
 }
